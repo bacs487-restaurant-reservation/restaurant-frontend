@@ -4,6 +4,7 @@ import "./RestaurantsContainer.css"
 import {getAllRestaurants} from "./restaurants";
 
 const RestaurantsContainer = () => {
+
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const handleChange = event => {
@@ -49,7 +50,7 @@ const RestaurantsContainer = () => {
 
             <div className="restaurants-container">
 
-                {searchResults.map(item => {
+                {restaurants.map(item => {
                     return <RestaurantCard key={item.id} restaurant={item}/>
                 })}
 
