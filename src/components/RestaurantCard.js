@@ -9,7 +9,7 @@ const RestaurantCard = ({ restaurant }) => {
                 <h4>Description:</h4>
                 <p>{restaurant.description}</p>
             </div>
-            <div className="restaurant-info-container">
+            <div className="restaurant-info-container-img">
                 <img className="restaurant-photo" src={restaurant.url} alt="Restaurant Image" />
             </div>
         </div>
