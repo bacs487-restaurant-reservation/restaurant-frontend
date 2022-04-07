@@ -39,7 +39,7 @@ const RestaurantsContainer = () => {
 
     return (
 
-        <div className="main-div">
+        <div>
 
             <center>
                 <input
