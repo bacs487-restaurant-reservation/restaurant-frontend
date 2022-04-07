@@ -9,8 +9,7 @@ const RestaurantCard = ({ restaurant }) => {
             </div>
             <h3>{restaurant.restaurant_name}</h3>
             <div className="restaurant-info-container">
-                <h4>Description:</h4>
-                <p>{restaurant.description}</p>
+                <p className="description">{restaurant.description}</p>
             </div>
         </div>
     );

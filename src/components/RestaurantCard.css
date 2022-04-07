@@ -1,6 +1,5 @@
 .restaurant-card {
     width: 300px;
-    height: 300px;
     border: 1px solid rgba(158, 158, 158, 0.5);
     box-shadow: 8px 10px 15px -6px rgba(158, 158, 158, 1);
     background: #ddd;
@@ -26,11 +25,15 @@
     justify-content: center;
 }
 
-.country-info-item p {
+.restaurant-info-item p {
     padding: 0 0.5rem;
 }
 
 .restaurant-photo {
     width: 100%;
     height: auto;
+}
+
+.description {
+    padding: 10px;
 }
