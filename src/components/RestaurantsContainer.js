@@ -39,14 +39,16 @@ const RestaurantsContainer = () => {
 
     return (
 
-        <div>
+        <div className="main-div">
 
-            <input
+            <center>
+                <input
                 type="text"
                 placeholder="Search a zip-code"
                 value={searchTerm}
                 onChange={handleChange}
                 />
+            </center>
 
             <div className="restaurants-container">
 
