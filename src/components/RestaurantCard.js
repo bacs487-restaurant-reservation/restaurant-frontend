@@ -1,7 +1,11 @@
 import React from "react";
 import "./RestaurantCard.css";
 
+
+
+
 const RestaurantCard = ({ restaurant }) => {
+    
     return (
         <div className="restaurant-card">
             <div className="restaurant-info-container-img">
@@ -12,7 +16,9 @@ const RestaurantCard = ({ restaurant }) => {
                 <p className="description">{restaurant.description}</p>
                 <a href="#" className="reserve-link">Reserve a table!</a>
             </div>
+            
         </div>
+        
     );
 };
 

@@ -2,8 +2,13 @@ import React, {useState, useEffect, useRef} from "react";
 import RestaurantCard from "./RestaurantCard";
 import "./RestaurantsContainer.css"
 import {getAllRestaurants} from "./restaurants";
+import Login from "./Login";
+import { useNavigate } from "react-router-dom";
+
 
 const RestaurantsContainer = () => {
+
+    
 
     const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
@@ -13,6 +18,9 @@ const RestaurantsContainer = () => {
     };
     const [restaurants, setRestaurants] = useState([]);
     const componentIsMounted = useRef(true);
+
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
 
     // Create list of all restaurants
     useEffect(() => {
@@ -37,27 +45,36 @@ const RestaurantsContainer = () => {
         setSearchResults(results);
     }, [searchTerm]);
 
+    
+     let navigate = useNavigate();
+    
     return (
+    <>
+        <div className="main-div">
+                <center>
+                    <input
+                        type="text"
+                        placeholder="Search a zi
+                        p-code"
+                        value={searchTerm}
+                        onChange={handleChange} />
 
-        <div>
+                </center>
 
-            <center>
-                <input
-                type="text"
-                placeholder="Search a zip-code"
-                value={searchTerm}
-                onChange={handleChange}
-                />
-            </center>
+                <button  onClick={() =>(navigate("/login"))} style={{ marginLeft: "auto" }}>
+                    Employee Login
+                </button>
+                {/* <button style={{ marginLeft: "auto" }}> Employee Login</button> */}
 
-            <div className="restaurants-container">
 
-                {restaurants.map(item => {
-                    return <RestaurantCard key={item.id} restaurant={item}/>
-                })}
+                <div className="restaurants-container">
 
-            </div>
-        </div>
+                    {restaurants.map(item => {
+                        return <RestaurantCard key={item.id} restaurant={item}   />
+                    })}
+
+                </div>
+            </div></>
 
     )
 }
